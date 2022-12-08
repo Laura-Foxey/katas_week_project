@@ -10,17 +10,20 @@
             if (strs.Length == 0)
                 return "";
 
-            int minLength = strs.Min(s => s.Length);
+            //return the shortest string in the array
+            int shortest = strs.OrderBy(s => s.Length).First();
             string prefix = "";
-            for (int i = 0; i < minLength; i++)
+
+            //loop through the shortest string
+            for (int i = 0; i < shortest.Length; i++)
             {
-                char c = strs[0][i];
-                if (strs.All(s => s[i] == c))
-                    prefix += c;
+                //if all of the strings' first character match with the shortest string's, add it to prefix 
+                if (strs.All(s => s[i] == shortest[i]))
+                    prefix += shortest[i];
+                //otherwise break out of the loop
                 else
                     break;
             }
-
             return prefix;
         }
      }
