@@ -19,13 +19,14 @@ public class Solution {
             else
             {
                 answer = Math.Max(answer, chars.Count());
+                //resets the loop index i to the start of the current substring
                 i = i - chars.Count();
                 chars.Clear();
             }
         }
 
-    // check if the length of `chars` is greater than the current longest length after the loop has completed
-    answer = Math.Max(answer, chars.Count());
-    return answer;
+        // check if the current length of unique chars is greater than the current longest length after the loop has completed
+        answer = Math.Max(answer, chars.Count());
+        return answer;
     }
 }
