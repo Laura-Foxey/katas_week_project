@@ -5,27 +5,27 @@ substring
 */
 
 public class Solution {
-    public int LengthOfLongestSubstring(string s) {
+    public int LengthOfLongestSubstring(string s) 
+    {
         int answer = 0;
-        string chars = "";
+        var chars = new HashSet<char>();
+
         for(int i = 0; i < s.Length; i++)
         {
             if(!chars.Contains(s[i]))
             {
-                chars += s[i];
+                chars.Add(s[i]);
             }
             else
             {
-                if(chars.Count() > answer) 
-                { 
-                    answer = chars.Count();
-                }
+                answer = Math.Max(answer, chars.Count());
                 i = i - chars.Count();
-                chars = "";
+                chars.Clear();
             }
         }
 
-        if (chars.Count() > answer) { answer = chars.Count();}
-        return answer;
+    // check if the length of `chars` is greater than the current longest length after the loop has completed
+    answer = Math.Max(answer, chars.Count());
+    return answer;
     }
 }
