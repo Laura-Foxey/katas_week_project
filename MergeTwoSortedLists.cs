@@ -49,7 +49,6 @@ public class Solution {
         // if l1 is not null at the end of the while loop, set the next reference of runnerHead to l1
         if (l1 != null) runnerHead.next = l1;
         
-        // same but for l2
         if (l2 != null) runnerHead.next = l2;
         
         // return the merged list without the first value!
