@@ -8,7 +8,7 @@ public class Solution {
     void FizzBuzz(int n) {
         for (int i = 1; i <= n; i++) 
         {
-            
+            string output = "";
             if (i % 3 == 0) {
                 output += "Fizz";
             }
@@ -18,7 +18,7 @@ public class Solution {
             if (output == "") {
                 output = i.ToString();
             }
-            
+            Console.WriteLine(output);
         }
     }
 }
