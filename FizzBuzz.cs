@@ -5,5 +5,20 @@ Create a function called "FizzBuzz" that takes in an integer n as a parameter an
 */
 
 public class Solution {
-
+    void FizzBuzz(int n) {
+        for (int i = 1; i <= n; i++) 
+        {
+            
+            if (i % 3 == 0) {
+                output += "Fizz";
+            }
+            if (i % 5 == 0) {
+                output += "Buzz";
+            }
+            if (output == "") {
+                output = i.ToString();
+            }
+            
+        }
+    }
 }
